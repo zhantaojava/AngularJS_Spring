@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div ng-repeat="comment in comments">
+    <p>{{comment.suggestion}}</p>
+    </div>
+    <form>
+        <input type="text" ng-model="newSuggestion"  placeholder="leave your comment here">
+        <button ng-click="comment()">Comment</button>
+    </form>
+    <a href="#/">Home</a>
+</body>
+</html>

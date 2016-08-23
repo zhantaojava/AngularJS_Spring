@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suggestion Game</title>
+</head>
+<body>
+
+
+    <div>
+        <h1>Top </h1>
+    </div>
+
+    <div ng-repeat="post in posts">
+        <p>
+            <span class="glyphicon glyphicon-plus-sign" "></span> Title: {{post.title}}
+        </p>
+        <p>
+            <span class="glyphicon glyphicon-plus-sign" ng-click="upVote($index)"><a>Upvotes+ :</a></span>  {{post.upvotes}}
+        </p>
+        <a href="#/suggestion/{{$index}}">Comments</a>
+    </div>
+    <div>
+    	<h1>
+    		<a href="app/hello">Rest API</a>
+    	</h1>
+    	<h1>
+    		<a href="app/listSugggestion">ListSuggestion API</a>
+    	</h1>
+    </div>
+</body>
+</html>
