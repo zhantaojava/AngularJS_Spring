@@ -16,6 +16,6 @@
   <property name="format_sql">true</property>
   
   <mapping class="model.Suggestion"/>
-  <mapping class="model.Common"/>
+  <mapping class="model.Comment"/>
  </session-factory>
 </hibernate-configuration>

@@ -1,18 +1,23 @@
 package model;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table
-public class Suggestion {
-	private Integer id;
+public class Suggestion implements java.io.Serializable {
+	private int id;
 	private String title;
 	private Integer upVote;
 	private Integer downVote;
@@ -22,14 +27,26 @@ public class Suggestion {
 	private long openHour;
 	private long closeHour;
 	private String website;
+	private Set<Comment> comments=new HashSet<Comment>();
+	
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "suggestion")
+	@JsonManagedReference
+	public Set<Comment> getComments() {
+		return this.comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
+	}
+
 	@Id
 	@GeneratedValue
 	@Column(name = "id", unique = true, nullable = false)
-	public Integer getId() {
+	public  int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	@Column
@@ -104,5 +121,7 @@ public class Suggestion {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
+	
+	
 
 }

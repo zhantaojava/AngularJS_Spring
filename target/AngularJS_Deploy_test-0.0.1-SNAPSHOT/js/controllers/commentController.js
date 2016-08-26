@@ -4,7 +4,7 @@ app.controller('commentController',['$scope','suggestions','$routeParams', funct
     $scope.comments = suggestions.posts[$routeParams.postId].comments;
 
     $scope.comment=function () {
-        //alert($scope.newSuggestion)  ;
+        //alert($scope.newSuggestion);
 
         suggestions.posts[$routeParams.postId].comments.push({
             suggestion:$scope.newSuggestion

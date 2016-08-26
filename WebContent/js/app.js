@@ -24,6 +24,10 @@ app.config(function ($routeProvider) {
              controller:'menuController',
              templateUrl: 'views/menu.html'
          })
+         .when('/menu/:sugId',{
+             controller: 'commentController2',
+             templateUrl:'views/comments.html'
+         })
 
          .otherwise({
              redirectTo: '/'

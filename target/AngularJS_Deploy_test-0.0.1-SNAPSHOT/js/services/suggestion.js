@@ -3,27 +3,42 @@ app.factory('suggestions', [function(){
         posts: [
             {
                 title: 'Lucky Food',
-                upvotes: 0,
+                upvotes: 15,
                 comments: [
-                    {suggestion:'not bad'}
+                    {suggestion:'hao chi'}
                     ],
             },
             {
-                title: 'Hunan Taste',
-                upvotes: 2,
+                title: 'Tops Dinner',
+                upvotes: 9,
                 comments: [],
             },
             {
-                title: 'Taipei Noodle House',
+                title: 'China Town',
                 upvotes: 7,
                 comments: [],
             },
             {
-                title: 'V-YAN',
-                upvotes: 66,
+                title: 'Burger King',
+                upvotes: 3,
                 comments: [],
             },
         ]
     };
     return demoSuggestions;
+
+
+
 }]);
+
+
+//
+// app.factory('suggestions', ['$http', function($http) {
+//     return $http.get('http://jsonplaceholder.typicode.com/users')
+//         .success(function(data) {
+//             return data;
+//         })
+//         .error(function(err) {
+//             return err;
+//         });
+// }]);

@@ -22,6 +22,7 @@
                     <th>Open Hour</th>
                     <th>Close Hour</th>
                     <th>WebSite</th>
+                    <th>Comment</th>
                 </tr>
                 <tr ng-repeat="m in menus">
                     <td>{{m.id}}</td>
@@ -34,6 +35,8 @@
                     <td>{{m.openHour|date: 'shortTime'}}</td>
                     <td>{{m.closeHour|date:'shortTime'}}</td>
                     <td>{{m.website}}</td>
+
+                    <td><a href="#/menu/{{$index}}">Comments</a></td>
                 </tr>
             </tbody>
         </table>

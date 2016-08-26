@@ -32,7 +32,7 @@ public class SuggestionController {
 	
 	
 	@RequestMapping(value="addSuggestion",method=RequestMethod.POST)
-	public @ResponseBody void addSuggestion(
+	public ResponseEntity<?>  addSuggestion(
 			@RequestBody Suggestion suggestion
 			){
 		
@@ -41,7 +41,7 @@ public class SuggestionController {
 		
 		suggestionService.addSuggestion(suggestion);;
 		
-		
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
 
@@ -50,7 +50,6 @@ public class SuggestionController {
 			@PathVariable Integer id
 			){
 		
-		logger.info("get suggestion");
 		
 		Suggestion suggestion = suggestionService.getById(id);
 		
@@ -61,7 +60,6 @@ public class SuggestionController {
 	@RequestMapping(value = "listSugggestion", method = RequestMethod.GET)
 	public ResponseEntity<List<Suggestion>> listSuggestion(	) {
 	
-		logger.info("list suggestion");
 		
 		List<Suggestion> listCommon = suggestionService.listSuggestion();
 		
