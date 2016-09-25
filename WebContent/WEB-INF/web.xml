@@ -31,9 +31,10 @@
 		<param-value>/WEB-INF/dispatcher-servlet.xml
 					</param-value>
 	</context-param>
-	<listener>
+	
+	<!-- <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	</listener> -->
 	
 	<!-- spring security filter , suggested name springSecurityFilterChain -->
 	<!-- <filter>
