@@ -59,13 +59,6 @@
 			class path specify as jsp folder <property name="prefix"> <value>/</value> 
 			</property> <property name="suffix"> <value>.jsp</value> </property> </bean> -->
 
-	
-	
-		<aop:config>
-		    <aop:aspect ref=""></aop:aspect>
-		    
-		    
-		</aop:config>
 
 
 
