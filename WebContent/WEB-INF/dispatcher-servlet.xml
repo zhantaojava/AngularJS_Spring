@@ -28,9 +28,9 @@
 			class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 			<property name="url"
-				value="jdbc:mysql://sql5.freemysqlhosting.net:3306/sql598310" />
-			<property name="username" value="sql598310" />
-			<property name="password" value="eP6%bX6*" />
+				value="jdbc:mysql://rds-szt-db02.cqmjilppqbnp.us-east-1.rds.amazonaws.com:3306/RDS_test" />
+			<property name="username" value="szt0172688" />
+			<property name="password" value="szt5882831" />
 		</bean>
 
 		<bean id="sessionFactory"
@@ -52,14 +52,20 @@
 			<property name="sessionFactory" ref="sessionFactory" />
 		</bean>
 
-
+		<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"></bean>
 
 
 		<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 			class path specify as jsp folder <property name="prefix"> <value>/</value> 
 			</property> <property name="suffix"> <value>.jsp</value> </property> </bean> -->
 
-
+	
+	
+		<aop:config>
+		    <aop:aspect ref=""></aop:aspect>
+		    
+		    
+		</aop:config>
 
 
 

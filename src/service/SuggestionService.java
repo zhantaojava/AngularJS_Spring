@@ -12,7 +12,8 @@ public interface SuggestionService {
 		List<Suggestion> listSuggestion();
 
 		Suggestion getById(int id);
-
+		Suggestion getByIdWithoutComment(int id);
+		
 		// Update
 		void updateSuggestion(Suggestion sug);
 

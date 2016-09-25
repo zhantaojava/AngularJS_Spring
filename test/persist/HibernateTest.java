@@ -1,10 +1,12 @@
 package persist;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.FlushMode;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
@@ -76,14 +78,59 @@ public class HibernateTest {
 	
 		
 		
-		//System.out.println("**** ID : ***"+c.getSuggestion().getId());
 		
 		session.getTransaction().commit();
 		
-		//System.out.println(sDAOImpl.getById(11).getOpenHour());
 
 		
 
 	}
+	
+	@Test
+	public void FetchTypeTest(){
+		
+		
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		
+		
+		List<Suggestion> loadAll = template.loadAll(Suggestion.class);
+		System.out.println(loadAll);
+		
+		Hibernate.initialize(loadAll.get(0).getComments());
+		
+		session.getTransaction().commit();
+		
+//		Session session1 = sessionFactory.getCurrentSession();
+//		session1.beginTransaction();
+		
+		Suggestion suggestion = loadAll.get(0);
+		Set<Comment> comments = suggestion.getComments();
+		
+		for(Comment c:comments){
+			System.out.println("*********:"+c.getText());
+		}
+		
+//		session1.getTransaction().commit();
+		
+		//System.out.println(loadAll.get(0).getComments());
+		
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

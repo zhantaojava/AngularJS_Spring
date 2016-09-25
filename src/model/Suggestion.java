@@ -29,7 +29,7 @@ public class Suggestion implements java.io.Serializable {
 	private String website;
 	private Set<Comment> comments=new HashSet<Comment>();
 	
-	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.EAGER, mappedBy = "suggestion")
+	@OneToMany(cascade=CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "suggestion")
 	@JsonManagedReference
 	public Set<Comment> getComments() {
 		return this.comments;

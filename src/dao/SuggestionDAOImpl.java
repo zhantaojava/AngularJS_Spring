@@ -28,7 +28,7 @@ public class SuggestionDAOImpl implements SuggestionDAO {
 //	} 
 	
 	
-	@Transactional(propagation=Propagation.REQUIRED,readOnly=false) 
+//	@Transactional(propagation=Propagation.REQUIRED,readOnly=false) 
 	public void addSuggestion(Suggestion sug) {
 		template.save(sug);
 	}
@@ -59,5 +59,8 @@ public class SuggestionDAOImpl implements SuggestionDAO {
 		template.delete(getById(id));
 
 	}
+	
+	
+	
 
 }
